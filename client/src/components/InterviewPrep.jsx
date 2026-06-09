@@ -99,7 +99,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
       <p style={{ color: 'var(--text-muted)', marginBottom: 24 }}>Practice firm-specific CA Articleship questions</p>
 
       {/* Controls */}
-      <div className="card flex gap-4 mb-6" style={{ alignItems: 'center' }}>
+      <div className="card flex gap-4 mb-6 prep-controls-card" style={{ alignItems: 'center' }}>
         <select value={iFirm} onChange={e => setIFirm(e.target.value)} style={{ flex: 1 }}>
           {FIRMS.map(f => <option key={f} value={f}>{f}</option>)}
         </select>
@@ -110,6 +110,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
           ✨ Generate 6 Questions
         </button>
       </div>
+
 
       {/* Firm context banner */}
       {firmContext && iQs.length > 0 && (

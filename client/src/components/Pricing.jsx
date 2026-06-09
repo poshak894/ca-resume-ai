@@ -2,22 +2,15 @@ import React from 'react';
 
 export default function Pricing({ startPay, setPage }) {
   const PricingButton = ({ children, onClick, variant = 'mint' }) => (
-    <div
-      className={`pricing-btn-wrapper pricing-btn-${variant}`}
+    <button
+      className={`pricing-bubbles-btn pricing-bubbles-${variant}`}
       onClick={onClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') onClick();
-      }}
+      type="button"
     >
-      <button className="pricing-gradient-btn" type="button" tabIndex={-1}>{children}</button>
-      <div className="pricing-gradient-layer" />
-      <div className="pricing-gradient-layer" />
-      <div className="pricing-light" />
-      <div className="pricing-text-overlay">{children}</div>
-    </div>
+      <span className="text">{children}</span>
+    </button>
   );
+
 
   return (
     <div className="page-section-shell plans-page-shell">
