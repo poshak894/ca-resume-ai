@@ -11,7 +11,7 @@ export default function Templates({ setPage, isPro, setShowPayM }) {
   ];
 
   return (
-    <div style={{ paddingTop: 80, paddingLeft: 24, paddingRight: 24, maxWidth: 1000, margin: '0 auto', minHeight: '100vh', textAlign:'center' }}>
+    <div style={{ paddingTop: 120, paddingLeft: 24, paddingRight: 24, maxWidth: 1000, margin: '0 auto', minHeight: '100vh', textAlign:'center' }}>
       <h2 style={{ fontSize: 32, marginBottom: 8 }}>📋 Resume Templates</h2>
       <p style={{ color: '#aaa', marginBottom: 40 }}>Select a template optimized for Big 4 ATS parsers</p>
 
