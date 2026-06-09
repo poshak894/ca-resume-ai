@@ -33,18 +33,18 @@ export default function ResumeBuilder({ data, setData, step, setStep, isPro, set
               <div style={{
                 width:28, height:28, borderRadius:'50%', 
                 background: step >= i ? 'var(--t)' : 'transparent',
-                border: `2px solid ${step >= i ? 'var(--t)' : 'var(--t3)'}`,
+                border: `2px solid ${step >= i ? 'var(--t)' : 'var(--border-soft)'}`,
                 display:'flex', alignItems:'center', justifyContent:'center',
-                fontWeight:'bold', color: step >= i ? '#fff' : 'var(--t3)',
+                fontWeight:'bold', color: step >= i ? '#fff' : 'var(--text-muted)',
                 transition: 'all 0.3s',
                 fontSize: 12
               }}>
                 {i + 1}
               </div>
-              <span style={{fontSize:10, color: step >= i ? 'var(--l)' : '#aaa', fontWeight:600}}>{s}</span>
+              <span style={{fontSize:10, color: step >= i ? 'var(--l)' : 'var(--text-muted)', fontWeight:600}}>{s}</span>
             </div>
             {i < steps.length - 1 && (
-              <div style={{flex:1, height:2, background: step > i ? 'var(--t)' : 'var(--t3)', margin:'-12px 10px 0', borderRadius:2, transition: 'all 0.3s'}}/>
+              <div style={{flex:1, height:2, background: step > i ? 'var(--t)' : 'var(--border-soft)', margin:'-12px 10px 0', borderRadius:2, transition: 'all 0.3s'}}/>
             )}
           </React.Fragment>
         ))}
@@ -86,15 +86,15 @@ export default function ResumeBuilder({ data, setData, step, setStep, isPro, set
             overflow: 'hidden'
           }}>
             <div className="flex justify-between items-center mb-3">
-               <h4 style={{fontSize: 12, color: '#aaa', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1.5}}>Live Preview</h4>
-               <span style={{fontSize: 10, color: 'var(--t)', background: 'rgba(0,191,166,0.1)', padding: '2px 10px', borderRadius: 4, fontWeight: 500}}>Syncing</span>
+               <h4 style={{fontSize: 12, color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1.5}}>Live Preview</h4>
+               <span style={{fontSize: 10, color: 'var(--t)', background: 'var(--surface-soft)', padding: '2px 10px', borderRadius: 4, fontWeight: 500}}>Syncing</span>
             </div>
             <div style={{
               width: '100%', 
               overflow: 'hidden', 
               borderRadius: 16, 
-              border: '1px solid var(--t3)',
-              boxShadow: '0 30px 40px rgba(0,0,0,0.4)',
+              border: '1px solid var(--border-soft)',
+              boxShadow: '0 30px 40px rgba(8,28,21,0.18)',
               background: '#fff',
               display: 'flex',
               justifyContent: 'center'

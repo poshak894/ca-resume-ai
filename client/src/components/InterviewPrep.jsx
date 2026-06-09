@@ -96,7 +96,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
   return (
     <div style={{ paddingTop: 80, paddingLeft: 24, paddingRight: 24, maxWidth: 820, margin: '0 auto', minHeight: '100vh', paddingBottom: 60 }}>
       <h2 style={{ fontSize: 32, marginBottom: 6 }}>🎙️ AI Interview Prep</h2>
-      <p style={{ color: '#aaa', marginBottom: 24 }}>Practice firm-specific CA Articleship questions</p>
+      <p style={{ color: 'var(--text-muted)', marginBottom: 24 }}>Practice firm-specific CA Articleship questions</p>
 
       {/* Controls */}
       <div className="card flex gap-4 mb-6" style={{ alignItems: 'center' }}>
@@ -114,7 +114,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
       {/* Firm context banner */}
       {firmContext && iQs.length > 0 && (
         <div style={{
-          background: 'rgba(126,200,50,0.07)', border: '1px solid rgba(126,200,50,0.3)',
+          background: 'var(--surface-soft)', border: '1px solid var(--border-soft)',
           borderRadius: 10, padding: '12px 16px', marginBottom: 20,
           display: 'flex', alignItems: 'flex-start', gap: 10,
         }}>
@@ -123,7 +123,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
             <span style={{ fontWeight: 700, color: 'var(--l2)', fontSize: 13, textTransform: 'uppercase', letterSpacing: 1 }}>
               {iFirm} — Interview Tips
             </span>
-            <p style={{ color: '#ccc', fontSize: 13, marginTop: 4, lineHeight: 1.6 }}>{firmContext}</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: 13, marginTop: 4, lineHeight: 1.6 }}>{firmContext}</p>
           </div>
         </div>
       )}
@@ -152,7 +152,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
                 {/* Question + Why asked */}
                 <div style={{ flex: 1 }}>
                   <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 6, lineHeight: 1.4 }}>{q.question}</h3>
-                  <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: 12, color: 'var(--text-muted)', fontStyle: 'italic', lineHeight: 1.5 }}>
                     💡 <em>{q.why_asked}</em>
                   </p>
                 </div>
@@ -176,7 +176,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
 
               {/* Answer panel */}
               {ans && isOpen && (
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', padding: '16px 16px 16px 58px', background: 'rgba(255,255,255,0.02)' }}>
+                <div style={{ borderTop: '1px solid var(--border-soft)', padding: '16px 16px 16px 58px', background: 'var(--surface-soft)' }}>
 
                   {/* Source badge */}
                   {src && (
@@ -192,7 +192,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
                     <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--t)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>
                       ✍️ Model Answer
                     </div>
-                    <p style={{ color: '#ddd', fontSize: 14, lineHeight: 1.7, background: 'rgba(255,255,255,0.03)', padding: '10px 14px', borderRadius: 8, borderLeft: '3px solid var(--t)' }}>
+                    <p style={{ color: 'var(--text-main)', fontSize: 14, lineHeight: 1.7, background: 'var(--surface)', padding: '10px 14px', borderRadius: 8, borderLeft: '3px solid var(--t)' }}>
                       {ans.model_answer}
                     </p>
                   </div>
@@ -204,7 +204,7 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
                     </div>
                     <ul style={{ paddingLeft: 20, margin: 0 }}>
                       {ans.key_points?.map((k, i) => (
-                        <li key={i} style={{ color: '#ccc', fontSize: 13, lineHeight: 1.7 }}>{k}</li>
+                        <li key={i} style={{ color: 'var(--text-muted)', fontSize: 13, lineHeight: 1.7 }}>{k}</li>
                       ))}
                     </ul>
                   </div>
@@ -213,11 +213,11 @@ Return ONLY a raw JSON object. No markdown, no code fences, no explanation.
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                     <div style={{ background: 'rgba(224,92,92,0.08)', border: '1px solid rgba(224,92,92,0.25)', borderRadius: 8, padding: '10px 12px' }}>
                       <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', marginBottom: 5, textTransform: 'uppercase', letterSpacing: 1 }}>⚠️ Common Mistake</div>
-                      <p style={{ color: '#ccc', fontSize: 13, lineHeight: 1.6, margin: 0 }}>{ans.common_mistake}</p>
+                      <p style={{ color: 'var(--text-muted)', fontSize: 13, lineHeight: 1.6, margin: 0 }}>{ans.common_mistake}</p>
                     </div>
                     <div style={{ background: 'rgba(126,200,50,0.08)', border: '1px solid rgba(126,200,50,0.25)', borderRadius: 8, padding: '10px 12px' }}>
                       <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--l2)', marginBottom: 5, textTransform: 'uppercase', letterSpacing: 1 }}>🏆 {iFirm} Tip</div>
-                      <p style={{ color: '#ccc', fontSize: 13, lineHeight: 1.6, margin: 0 }}>{ans.expert_tip}</p>
+                      <p style={{ color: 'var(--text-muted)', fontSize: 13, lineHeight: 1.6, margin: 0 }}>{ans.expert_tip}</p>
                     </div>
                   </div>
 
