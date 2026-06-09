@@ -47,7 +47,13 @@ export default function RegisterPage({ setUser, setPage, showToast, onVerifyNeed
   };
 
   return (
-    <div style={{ paddingTop: 90, paddingLeft: 24, paddingRight: 24, maxWidth: 420, margin: '0 auto', minHeight: '100vh', textAlign: 'center' }}>
+    <div className="auth-page">
+      <div className="auth-loader" aria-hidden="true">
+        <span className="circle" />
+        <span className="circle" />
+        <span className="circle" />
+        <span className="circle" />
+      </div>
       <div style={{
         width: 64, height: 64, borderRadius: '50%',
         background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.2))',
@@ -56,10 +62,10 @@ export default function RegisterPage({ setUser, setPage, showToast, onVerifyNeed
         margin: '0 auto 20px', fontSize: 24
       }}>✨</div>
 
-      <h2 className="mb-2 text-t" style={{ fontSize: 28, fontWeight: 700 }}>Create Account</h2>
-      <p style={{ color: '#94a3b8', marginBottom: 28, fontSize: 14 }}>Sign up to build your Big 4 resume powered by AI.</p>
+      <h2 className="auth-heading">Start Free</h2>
+      <p className="auth-subheading">Sign up to build your Big 4 resume powered by AI.</p>
 
-      <form onSubmit={handleSubmit} className="card flex-col gap-4 text-left">
+      <form onSubmit={handleSubmit} className="card auth-card flex-col gap-4 text-left">
         <div>
           <label style={{ fontSize: 12, color: '#94a3b8', marginBottom: 6, display: 'block', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Full Name</label>
           <input value={name} onChange={e => setName(e.target.value)} placeholder="Rahul Sharma" required />

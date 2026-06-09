@@ -60,6 +60,9 @@ function App() {
 
   const isPro = user?.plan === 'pro';
   const hasTool = user?.plan === 'tools' || user?.plan === 'pro';
+  const lightPages = [];
+  const themeClass = lightPages.includes(page) ? 'theme-light' : 'theme-dark';
+  const pageClass = `page-${page}`;
 
   const setIsPro = (val) => { if (val && user) setUser({...user, plan: 'pro'}); };
   const setHasTool = (val) => { if (val && user && user.plan !== 'pro') setUser({...user, plan: 'tools'}); };
@@ -92,7 +95,7 @@ function App() {
       height: '100vh', width: '100vw', 
       display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center',
-      background: 'var(--d)'
+      background: 'var(--page-bg)'
     }}>
       <div className="spinner" style={{ fontSize: 48, color: 'var(--t)', marginBottom: 20 }}>⟳</div>
       <div style={{ color: '#666', fontSize: 12, textTransform: 'uppercase', letterSpacing: 2, fontWeight: 600 }}>CA Resume AI Assistant</div>
@@ -121,7 +124,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className={`app-shell ${themeClass} ${pageClass}`}>
       <Nav page={page} setPage={setPage} isPro={isPro} user={user} logout={logout} />
       {renderPage()}
       {payM && <PaymentModal type={payM} onClose={() => setPayM(null)} startPay={startPay} />}

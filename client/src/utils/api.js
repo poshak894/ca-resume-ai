@@ -1,4 +1,4 @@
-export const BASE = (import.meta.env.VITE_API_URL || "http://localhost:3001").replace(/\/$/, "");
+export const BASE = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 export const GOOGLE_AUTH_URL = `${BASE}/api/auth/google`;
 
 export async function registerUser(data) {
