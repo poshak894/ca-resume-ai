@@ -7,6 +7,7 @@ import StipendEstimator from './components/StipendEstimator.jsx';
 import InterviewPrep from './components/InterviewPrep.jsx';
 import ResumeBuilder from './components/ResumeBuilder/index.jsx';
 import Templates from './components/Templates.jsx';
+import Profile from './components/Profile.jsx';
 import PaymentModal from './modals/PaymentModal.jsx';
 import PaySuccessModal from './modals/PaySuccessModal.jsx';
 import LoginPage from './components/Auth/LoginPage.jsx';
@@ -78,6 +79,14 @@ function App() {
     return () => window.clearTimeout(timer);
   }, [loading, showAppLoader]);
 
+  const hasBoughtPlan = user && user.plan && user.plan !== 'free';
+
+  useEffect(() => {
+    if (page === 'pricing' && hasBoughtPlan) {
+      setPage('home');
+    }
+  }, [page, hasBoughtPlan, setPage]);
+
   const isPro = user?.plan === 'pro';
   const hasTool = user?.plan === 'tools' || user?.plan === 'pro';
   const themeClass = 'theme-dark';
@@ -123,7 +132,7 @@ function App() {
   };
 
   const renderPage = () => {
-    const isProtected = ['builder', 'tools', 'admin'].includes(page);
+    const isProtected = ['builder', 'tools', 'admin', 'profile'].includes(page);
     if (isProtected && !user) {
       return (
         <LoginPage
@@ -138,7 +147,7 @@ function App() {
 
     switch (page) {
       case 'home':
-        return <Hero setPage={setPage} />;
+        return <Hero setPage={setPage} hasBoughtPlan={hasBoughtPlan} />;
       case 'pricing':
         return <Pricing setPage={setPage} isPro={isPro} hasTool={hasTool} startPay={startPay} />;
       case 'tools':
@@ -149,6 +158,8 @@ function App() {
         return <AdminDashboard />;
       case 'templates':
         return <Templates setPage={setPage} isPro={isPro} setShowPayM={setPayM} />;
+      case 'profile':
+        return <Profile user={user} setUser={setUser} setPage={setPage} showToast={showToast} ats={ats} />;
       case 'builder':
         return (
           <ResumeBuilder

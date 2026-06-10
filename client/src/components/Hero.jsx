@@ -3,7 +3,7 @@ import { Briefcase, Star, Users } from 'lucide-react';
 import Features from './Features.jsx';
 import Pricing from './Pricing.jsx';
 
-export default function Hero({ setPage }) {
+export default function Hero({ setPage, hasBoughtPlan }) {
   return (
     <div className="home-hero">
       <div className="hero-kicker hero-fade-in hero-fade-in-delay-1">
@@ -44,9 +44,11 @@ export default function Hero({ setPage }) {
 
       <Features setPage={setPage} />
 
-      <div className="home-pricing-section">
-        <Pricing setPage={setPage} startPay={() => setPage('pricing')} />
-      </div>
+      {!hasBoughtPlan && (
+        <div className="home-pricing-section">
+          <Pricing setPage={setPage} startPay={() => setPage('pricing')} />
+        </div>
+      )}
 
       <footer className="home-footer">
         <p>© 2025 CA Resume AI. Designed for Big 4 Articleship Aspirants.</p>
