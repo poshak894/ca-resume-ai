@@ -51,7 +51,7 @@ export default function Hero({ setPage, hasBoughtPlan }) {
       )}
 
       <footer className="home-footer">
-        <p>© 2025 CA Resume AI. Designed for Big 4 Articleship Aspirants.</p>
+        <p>© 2026 CA Resume AI. Designed for Big 4 Articleship Aspirants.</p>
       </footer>
     </div>
   );

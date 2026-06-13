@@ -59,7 +59,7 @@ export default function Pricing({ startPay, setPage }) {
             Popular
           </div>
           <div style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 8, color: 'var(--l)' }}>Pro</div>
-          <div style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 16 }}>₹199</div>
+          <div style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 16 }}>₹299</div>
           <p style={{ color: 'var(--text-muted)', fontSize: 14, marginBottom: 24, minHeight: 40 }}>Everything you need to secure a Big 4 articleship.</p>
           <ul style={{ flex: 1, listStyle: 'none', color: 'var(--text-main)', fontSize: 14, marginBottom: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
             <li><strong style={{ color: 'var(--l2)' }}>✓ Everything in Tools Pack</strong></li>
@@ -71,7 +71,7 @@ export default function Pricing({ startPay, setPage }) {
             <li>✓ LinkedIn + Cover Letter AI</li>
           </ul>
           <PricingButton variant="deep" onClick={() => startPay('pro')}>
-            Upgrade to Pro — ₹199
+            Upgrade to Pro — ₹299
           </PricingButton>
         </div>
       </div>
